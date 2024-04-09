@@ -6,6 +6,8 @@ Site allows users to search for music, artists, songs, lyrics, and videos.
 
 USER STORY:
 
-As a user, I can search database for specific songs and artists.
-As a user, I can see results, based on my search.
-As I user, I can see options for lyrics, songs, artists, and videos.
+AS A music fan,
+
+I WANT to learn more about the songs I like
+
+SO THAT I can sing along and learn more about the artist, as well as find similar music.
