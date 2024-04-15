@@ -1,3 +1,18 @@
+// Adding the constants to listen for the search button getting clicked
+const searchButton = document.querySelector('#searchButton');
+const results = document.querySelector('#results');
+
+// This in the function that calls the prompt for a song search
+function searchPrompt (event) {
+    let search = prompt("Enter your song here");
+}
+
+// The event listener for the search button
+searchButton.addEventListener('click', function() {
+    searchPrompt()
+})
+
+
 //spotify artists
 // const url = 'https://spotify23.p.rapidapi.com/artist_overview/?id=2w9zwq3AktTeYYMuhMjju8';
 // const options = {
