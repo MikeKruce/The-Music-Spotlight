@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>The Music Spotlight</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="./assets/photos/favicon.ico" />
 
-      </head>
-  <body>
-    <header>
-        <img src="./assets/photos/The Music Spotlight Header Photo.png" alt="header photo">
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Music Spotlight</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/photos/favicon.ico" />
 
-    <div class="info">
-      <div>
-      Welcome to The Music Spotlight. Here you will be able to search for your favorite songs, artists, videos, and more.
-      </div>
+</head>
+
+<body>
+  <header>
+    <img src="./assets/photos/The Music Spotlight Header Photo.png" alt="header photo">
+  </header>
+
+  <div class="info">
+    <div>
+      <strong>Welcome to The Music Spotlight. Here you will be able to search for your favorite songs, artists, videos,
+        and more.</strong>
     </div>
+  </div>
 
-    <div class="search">
-      <button class="button is-info is-outlined">SEARCH</button>
-    </div>
-    
-    <div class="results">
-        
-    </div>
+  <div class="search">
+    <button class="button is-info is-outlined" id="searchButton">SEARCH</button>
+  </div>
 
-    <div class="chart-top">
-      <div class="chart card 1">
-        <div class="chart card 1-content">
-          <div class="chart 1 content">
-            Chart 1
-          </div>
-        </div>
-      </div>
+  <div class="results" id="results">
 
-      <div class="chart card 2">
-        <div class="chart card 2-content">
-          <div class="chart 2 content">
-            Chart 2
-        </div>
-      </div>
+  </div>
 
-      <div class="chart card 3">
-        <div class="chart card 3-content">
-          <div class="chart 3 content">
-            Chart 3
-          </div>
+  <div class="chart-top">
+
+    <div class="chart card 1">
+      <div class="chart card 1-content">
+        <div class="chart 1 content">
+          Chart 1
         </div>
       </div>
     </div>
 
-    <footer>
-      FOOTER
-    </footer>
-    
-    <script src="index.js"></script>
-  </body>
-  
+    <div class="chart card 2">
+      <div class="chart card 2-content">
+        <div class="chart 2 content">
+          Chart 2
+        </div>
+      </div>
+    </div>
+
+    <div class="chart card 3">
+      <div class="chart card 3-content">
+        <div class="chart 3 content">
+          Chart 3
+          <!-- <form>
+            <label for="userInput">Date:</label><br>
+            <input type="text" id="userInput" placeholder="YYYY-MM-DD" name="userInput"><br>
+            <button id="billboardbtn" type="click">Search</button>
+          </form> -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <img src="./assets/photos/Music Spotlight Logo.png" alt="Footer Logo" div class="footerlogo">
+      <p>
+        <strong>The Music Spotlight</strong>
+      </p>
+      <p>Mike Kruce, Vince Velthuizen, Chris Josephs, and Mathew Gonzalez</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
