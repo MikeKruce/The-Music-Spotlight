@@ -2,11 +2,22 @@
 const searchButton = document.querySelector('#searchButton');
 // Constant that will refer to the section Lyric results are added to
 const results = document.getElementById('results');
+// This display will be used to show information on recent searches
+const recentSearchDisplay = document.getElementById('recentSearchDisplay');
 
 // Here are some variables being set for later use
+// search is for the user searching up songs. It will be modified by the function to work with the API
 let search;
+// Recent searches is for storing the most recent searches using local storage, to display later
+let recentSearches = [];
+// searchID correlates to the ID that is assigned to the song that is being looked up by the User
 let searchID;
 let lyrics = [];
+// Retrieve recent searches from local storage
+const storedSearches = localStorage.getItem('recentSearches');
+if (storedSearches) {
+    recentSearches = JSON.parse(storedSearches);
+}
 
 // These options are made to be used by the spotify API
 const optionsSpot = {
@@ -22,17 +33,31 @@ function searchPrompt(event) {
     search = prompt("Enter your song here");
 // Trims any spaces from the beginning or the end of the submitted prompt
     search = search.trim();
+// Adds the search to local storage, trimming off old searches
+    recentSearches.unshift(search);
+    if (recentSearches.length > 4) {
+    recentSearches.splice(4);}
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
 // Replace spaces between words with %20, which is needed by the spotify API
       search = search.replace(/\s+/g, '%20');
-      return search;
+    return [search, recentSearches];
+}
+
+// Put the recent searches into the page
+function recentUpdate(array) {
+  array.forEach(function (array) {
+    const listItem = document.createElement('li')
+    listItem.textContent = array;
+     recentSearchDisplay.appendChild(listItem);
+   })
 }
 
 // This function is to take the array of lyrics given by spotify when looking up a song,
 // and inserting it into the results section of the HTML
 function separateLyrics(array) {
+  results.innerHTML = '';
     array.forEach(function (array) {
-        console.log(array.words);
-        const listItem = document.createElement('li');
+      const listItem = document.createElement('li')
         listItem.textContent = array.words;
         results.appendChild(listItem);
     })
@@ -62,7 +87,6 @@ function getSongID() {
     const url1 = `https://spotify23.p.rapidapi.com/search/?q=${encodeURIComponent(search)}&type=tracks&offset=0&limit=10&numberOfTopResults=5`;
 // This will take the searched song title and retrieve data for it that contains the SONG ID
 // that will pull the lyrics up
-
     fetch(url1, optionsSpot)
         .then(function (response) {
             return response.json()
@@ -70,15 +94,24 @@ function getSongID() {
 // This part will take the data retrieved and pull out the needed ID
         .then(function (data) {
             searchID = data.tracks.items[0].data.id;
-            console.log(searchID);
             getSong(searchID)
         })
 }
 
+// // Trigger the initial search and lyrics loading
+window.addEventListener('load', function () {
+  if (storedSearches) {
+    recentUpdate(recentSearches);
+  }
+});
+
 // The event listener for the search button that triggers the lookup and pasting of lyrics
 searchButton.addEventListener('click', function () {
+    results.textContent = '';
+    recentSearchDisplay.textContent = '';
     searchPrompt();
     getSongID();
+    recentUpdate(recentSearches);
 })
 
 const today = dayjs();
