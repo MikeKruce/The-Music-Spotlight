@@ -1,17 +1,21 @@
+/* Set the whole screen to dark */
 * {
     background-color: black;
 }
 
+/* Format the top of the screen */
 header {
     display: flex;
     width: 100%;
     justify-content: center;
 }
 
+/* Makes the cards go into a grid */
 div {
     display: grid;
 }
 
+/* Formats the info above the search button */
 .info {
     display: flex;
     justify-content: center;
@@ -22,18 +26,20 @@ div {
 
 }
 
+/* Format the search button */
 .search {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
+/* Controls the area that holds the cards */
 .section {
     display: grid;
 }
 
-.projects {
     /*Project Boxes */
+.projects {
     justify-content: center;
     background-color: black;
     padding-top: 25px;
@@ -44,8 +50,8 @@ div {
     text-align: center;
 }
 
-.card {
     /*Project Boxes Placement */
+.card {
     border-style: solid;
     display: flex;
     border-width: 2px;
@@ -71,8 +77,9 @@ div {
 
 }
 
-.card img {
+
     /*images in card*/
+.card img {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
@@ -81,6 +88,7 @@ div {
     border-bottom-right-radius: 30px;
 }
 
+/* Format the footer */
 .footer {
     display: flex;
     width: 100%;
@@ -91,6 +99,7 @@ div {
     padding-bottom: 25px;
 }
 
+/* Format the image in the footer */
 .footerlogo {
     max-height: 150px;
     max-width: auto;
