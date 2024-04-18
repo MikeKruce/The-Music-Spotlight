@@ -48,7 +48,7 @@ function recentUpdate(array) {
   array.forEach(function (array) {
     const listItem = document.createElement('li')
     listItem.textContent = array;
-    listItem.classList.add('card','has-background-primary-light');
+    listItem.classList.add('card');
      recentSearchDisplay.appendChild(listItem);
    })
 }
@@ -114,45 +114,3 @@ searchButton.addEventListener('click', function () {
     getSongID();
     recentUpdate(recentSearches);
 })
-
-const today = dayjs();
-const formattedDate = today.format('YYYY-MM-DD')
-const billboardArtistUrl = `https://billboard-api5.p.rapidapi.com/api/charts/artist-100?week=${encodeURIComponent(formattedDate)}`
-const billboardGlobalUrl = `https://billboard-api5.p.rapidapi.com/api/charts/billboard-global-200?week=${encodeURIComponent(formattedDate)}`
-const billboardAfrobeatUrl = `https://billboard-api5.p.rapidapi.com/api/charts/billboard-u-s-afrobeats-songs?week=${encodeURIComponent(formattedDate)}`
-const billboardTopUrl = `https://billboard-api5.p.rapidapi.com/api/charts/hot-100?week=${encodeURIComponent(formattedDate)}`
-const optionsTop = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '33c405c45fmsh66b0459cec78964p1cdabdjsn132baa4ed581',
-    'X-RapidAPI-Host': 'billboard-api5.p.rapidapi.com'
-  }
-};
-fetch(billboardTopUrl, optionsTop)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
-  fetch(billboardGlobalUrl, optionsTop)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
-  fetch(billboardAfrobeatUrl, optionsTop)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
-  fetch(billboardArtistUrl, optionsTop)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
