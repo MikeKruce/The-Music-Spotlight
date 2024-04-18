@@ -110,7 +110,7 @@ div {
     width: 100%;
     justify-content: center;
     background-color: black;
-    margin-top: 800px;
+    margin-top: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -120,4 +120,26 @@ div {
     max-height: 150px;
     justify-self: center;
  
+}
+.recentSearchDisplay {
+    width: 100%;
+    color: black;
+    text-align: center;
+    background: #62c4e0;
+    color: black;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.box {
+    width: 100%;
+    color: white;
+    text-align: center;
+    background: #62c4e0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
