@@ -23,6 +23,7 @@ div {
     text-align: center;
     width: 100%;
     margin: 20px 0px 20px 0px;
+    justify-content: center;
 
 }
 
@@ -31,6 +32,21 @@ div {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+/* Control the recent searches displayed */
+.recentSearchDisplay{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0px 30px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* This controls the section that says Lyrics: */
+.lyrics {
+    margin-left: 50px;
+    font-size: 20px;
 }
 
 /* Controls the area that holds the cards */

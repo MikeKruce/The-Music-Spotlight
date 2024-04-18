@@ -48,6 +48,7 @@ function recentUpdate(array) {
   array.forEach(function (array) {
     const listItem = document.createElement('li')
     listItem.textContent = array;
+    listItem.classList.add('card','has-background-primary-light');
      recentSearchDisplay.appendChild(listItem);
    })
 }
@@ -108,7 +109,7 @@ window.addEventListener('load', function () {
 // The event listener for the search button that triggers the lookup and pasting of lyrics
 searchButton.addEventListener('click', function () {
     results.textContent = '';
-    recentSearchDisplay.textContent = '';
+    recentSearchDisplay.textContent = 'Recent Searches:';
     searchPrompt();
     getSongID();
     recentUpdate(recentSearches);
