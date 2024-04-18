@@ -102,5 +102,6 @@ div {
 /* Format the image in the footer */
 .footerlogo {
     max-height: 150px;
-    max-width: auto;
+    justify-self: center;
+ 
 }
