@@ -76,44 +76,53 @@ searchButton.addEventListener('click', function () {
     getSongID();
 })
 
-const today = dayjs();
-const formattedDate = today.format('YYYY-MM-DD')
-const billboardArtistUrl = `https://billboard-api5.p.rapidapi.com/api/charts/artist-100?week=${encodeURIComponent(formattedDate)}`
-const billboardGlobalUrl = `https://billboard-api5.p.rapidapi.com/api/charts/billboard-global-200?week=${encodeURIComponent(formattedDate)}`
-const billboardAfrobeatUrl = `https://billboard-api5.p.rapidapi.com/api/charts/billboard-u-s-afrobeats-songs?week=${encodeURIComponent(formattedDate)}`
-const billboardTopUrl = `https://billboard-api5.p.rapidapi.com/api/charts/hot-100?week=${encodeURIComponent(formattedDate)}`
+
+const deezerRockUrl = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/752286631'
+const deezerGlobalUrl = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/2098157264'
+const deezerAfrohitsUrl = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/1440614715'
+const deezerRapUrl = 'https://deezerdevs-deezer.p.rapidapi.com/playlist/1996494362'
 const optionsTop = {
   method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '33c405c45fmsh66b0459cec78964p1cdabdjsn132baa4ed581',
-    'X-RapidAPI-Host': 'billboard-api5.p.rapidapi.com'
-  }
+	headers: {
+		'X-RapidAPI-Key': '33c405c45fmsh66b0459cec78964p1cdabdjsn132baa4ed581',
+		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+	}
 };
-fetch(billboardTopUrl, optionsTop)
+fetch(deezerRapUrl, optionsTop)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data); 
+  });
+  fetch(deezerGlobalUrl, optionsTop)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
   });
-  fetch(billboardGlobalUrl, optionsTop)
+  fetch(deezerAfrohitsUrl, optionsTop)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
   });
-  fetch(billboardAfrobeatUrl, optionsTop)
+  fetch(deezerRockUrl, optionsTop)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
   });
-  fetch(billboardArtistUrl, optionsTop)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+
+
+
+//   // function chartList(array) {
+//   //   array.forEach(function (array) {
+//   //       console.log(array.words);
+//   //       const listItem = document.createElement('li');
+//   //       listItem.textContent = array.words;
+//   //       results.appendChild(listItem);
+//   //   })

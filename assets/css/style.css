@@ -103,4 +103,10 @@ div {
 .footerlogo {
     max-height: 150px;
     max-width: auto;
+
+}
+
+
+#topafro #topartists #topglobal #tophot {
+    display:flexbox;
 }
