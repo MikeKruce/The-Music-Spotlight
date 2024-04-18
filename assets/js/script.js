@@ -20,6 +20,11 @@ const optionsSpot = {
 // This in the function that calls the prompt for a song search
 function searchPrompt(event) {
     search = prompt("Enter your song here");
+// Trims any spaces from the beginning or the end of the submitted prompt
+    search = search.trim();
+// Replace spaces between words with %20, which is needed by the spotify API
+      search = search.replace(/\s+/g, '%20');
+      return search;
 }
 
 // This function is to take the array of lyrics given by spotify when looking up a song,
